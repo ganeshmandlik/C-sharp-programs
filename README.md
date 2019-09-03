@@ -65,33 +65,33 @@ Sort an array in descending order without using inbuilt C# function.
 
 using System;  
   
-namespace SortArrayExample  
-{  
-    class Program  
-    {  
-        static void Main(string[] args)  
+        namespace SortArrayExample  
         {  
-            int[] intArray = new int[] {2,9,4,3,5,1,7 };  
-            int temp = 0;  
-  
-            for (int i = 0; i <= intArray.Length-1; i++)  
+            class Program  
             {  
-                for (int j = i+1; j < intArray.Length; j++)  
+                static void Main(string[] args)  
                 {  
-                    if (intArray[i] < intArray[j])  
+                    int[] intArray = new int[] {2,9,4,3,5,1,7 };  
+                    int temp = 0;  
+
+                    for (int i = 0; i <= intArray.Length-1; i++)  
                     {  
-                        temp = intArray[i];  
-                        intArray[i] = intArray[j];  
-                        intArray[j] = temp;  
+                        for (int j = i+1; j < intArray.Length; j++)  
+                        {  
+                            if (intArray[i] < intArray[j])  
+                            {  
+                                temp = intArray[i];  
+                                intArray[i] = intArray[j];  
+                                intArray[j] = temp;  
+                            }  
+                        }  
                     }  
+                    Console.WriteLine("Array sort in descending order");  
+                    foreach (var item in intArray)  
+                    {  
+                        Console.WriteLine(item);  
+                    }  
+                    Console.ReadLine();  
                 }  
             }  
-            Console.WriteLine("Array sort in descending order");  
-            foreach (var item in intArray)  
-            {  
-                Console.WriteLine(item);  
-            }  
-            Console.ReadLine();  
         }  
-    }  
-}  
