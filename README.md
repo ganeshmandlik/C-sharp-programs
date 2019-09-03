@@ -7,38 +7,38 @@ We will create a simple one integer array having values 2,9,4,3,5,1,7 in the arr
 
 
 
-using System;  
-  
-namespace SortArrayExample  
-{  
-    class Program  
+    using System;  
+
+    namespace SortArrayExample  
     {  
-        static void Main(string[] args)  
+        class Program  
         {  
-            int[] intArray = new int[] {2,9,4,3,5,1,7 };  
-            int temp = 0;  
-  
-            for (int i = 0; i <= intArray.Length-1; i++)  
+            static void Main(string[] args)  
             {  
-                for (int j = i+1; j < intArray.Length; j++)  
+                int[] intArray = new int[] {2,9,4,3,5,1,7 };  
+                int temp = 0;  
+
+                for (int i = 0; i <= intArray.Length-1; i++)  
                 {  
-                    if (intArray[i] > intArray[j])  
+                    for (int j = i+1; j < intArray.Length; j++)  
                     {  
-                        temp = intArray[i];  
-                        intArray[i] = intArray[j];  
-                        intArray[j] = temp;  
+                        if (intArray[i] > intArray[j])  
+                        {  
+                            temp = intArray[i];  
+                            intArray[i] = intArray[j];  
+                            intArray[j] = temp;  
+                        }  
                     }  
                 }  
+                Console.WriteLine("Array sort in asscending order");  
+                foreach (var item in intArray)  
+                {  
+                    Console.WriteLine(item);  
+                }  
+                Console.ReadLine();  
             }  
-            Console.WriteLine("Array sort in asscending order");  
-            foreach (var item in intArray)  
-            {  
-                Console.WriteLine(item);  
-            }  
-            Console.ReadLine();  
         }  
     }  
-}  
 
 
 -------------------------------------OUTPUT----------------------------------------
